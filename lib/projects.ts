@@ -149,7 +149,7 @@ export function computeSpans(n: number): number[] {
   const out: number[] = [];
   let row = 0;
   for (let i = 0; i < n; i++) {
-    let s = SPAN_PATTERN[i % SPAN_PATTERN.length];
+    const s = SPAN_PATTERN[i % SPAN_PATTERN.length];
     if (row + s > 12) row = 0;
     out.push(s);
     row += s;

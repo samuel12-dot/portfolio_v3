@@ -20,11 +20,15 @@ export function Work() {
     ).matches;
     const hash = (location.hash || "").replace("#", "");
     if (VALID_FILTERS.includes(hash as FilterKey)) {
+      // Deep-linking via #filter must read location.hash post-hydration,
+      // so this can't be a lazy useState initializer without an SSR mismatch.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFilterState(hash as FilterKey);
     }
+    const activeTimers = timers.current;
     return () => {
-      window.clearTimeout(timers.current.t1);
-      window.clearTimeout(timers.current.t2);
+      window.clearTimeout(activeTimers.t1);
+      window.clearTimeout(activeTimers.t2);
     };
   }, []);
 
