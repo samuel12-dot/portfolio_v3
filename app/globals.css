@@ -78,6 +78,10 @@ a:hover {
   background-size: 100% 1px;
 }
 
+.contact-email:hover {
+  background-size: 100% 2px;
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translateY(20px);
