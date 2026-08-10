@@ -11,6 +11,7 @@ export type Project = {
   outcome: string;
   stack: string[];
   slot: string;
+  image?: string;
   url?: string;
   placeholder?: boolean;
   links: ProjectLink[];
@@ -30,9 +31,10 @@ export const PROJECTS: Project[] = [
       "A neighbourhood marketplace built around one idea: shop your street. React storefront, Express API, MongoDB persistence, JWT accounts and full listing CRUD.",
     stack: ["React", "Node.js", "Express", "MongoDB"],
     slot: "Storefront screenshot",
+    image: "/images/haventrade.png",
     links: [
-      { label: "Live demo ↗", href: "#" },
-      { label: "GitHub ↗", href: "#" },
+      { label: "Live demo ↗", href: "https://haventrade.vercel.app/" },
+      { label: "GitHub ↗", href: "https://github.com/samuel12-dot/haventrade" },
     ],
   },
   {

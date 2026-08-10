@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { ProjectLink } from "@/lib/projects";
 
@@ -10,6 +11,7 @@ export type ProjectCardViewModel = {
   stackChips: { label: string; rule: string }[];
   links: ProjectLink[];
   slot: string;
+  image?: string;
   url: string;
   isDesign: boolean;
   isFrontend: boolean;
@@ -187,9 +189,24 @@ export function ProjectCard({ card }: { card: ProjectCardViewModel }) {
               <div
                 data-media
                 data-wipe
-                style={{ ...mediaWipeStyle, aspectRatio: "16/10" }}
+                style={{
+                  ...(card.image
+                    ? { position: "relative" as const }
+                    : mediaWipeStyle),
+                  aspectRatio: "16/10",
+                }}
               >
-                <span style={slotLabelStyle}>{card.slot}</span>
+                {card.image ? (
+                  <Image
+                    src={card.image}
+                    alt={`${card.title} storefront screenshot`}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 60vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                ) : (
+                  <span style={slotLabelStyle}>{card.slot}</span>
+                )}
               </div>
             </div>
             <div

@@ -101,6 +101,7 @@ export function Work() {
         })),
         links: p.links,
         slot: p.slot,
+        image: p.image,
         url: p.url || "localhost:3000",
         isDesign: p.key === "product-design",
         isFrontend: p.key === "frontend",
