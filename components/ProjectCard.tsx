@@ -162,9 +162,24 @@ export function ProjectCard({ card }: { card: ProjectCardViewModel }) {
             <div
               data-media
               data-wipe
-              style={{ ...mediaWipeStyle, aspectRatio: "16/9" }}
+              style={{
+                ...(card.image
+                  ? { position: "relative" as const }
+                  : mediaWipeStyle),
+                aspectRatio: "16/9",
+              }}
             >
-              <span style={slotLabelStyle}>{card.slot}</span>
+              {card.image ? (
+                <Image
+                  src={card.image}
+                  alt={`${card.title} website screenshot`}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 60vw"
+                  style={{ objectFit: "cover" }}
+                />
+              ) : (
+                <span style={slotLabelStyle}>{card.slot}</span>
+              )}
             </div>
           </div>
         )}

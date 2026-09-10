@@ -39,15 +39,22 @@ export const PROJECTS: Project[] = [
   },
   {
     key: "frontend",
-    title: "Personal Portfolio",
+    title: "NACOS Nile",
     outcome:
-      "A design-led portfolio engineered for speed, accessibility and discoverability — component architecture, SEO and performance work, shipped on Vercel.",
-    stack: ["Next.js", "Tailwind CSS", "Vercel"],
+      "A competition-built digital experience for the NACOS Nile University chapter, designed to connect students across computing disciplines through programs, leadership and community.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     slot: "Site screenshot",
-    url: "ayodejisamuel.dev",
+    image: "/images/nacos-nile.png",
+    url: "nacosnile.org",
     links: [
-      { label: "Live ↗", href: "#" },
-      { label: "GitHub ↗", href: "#" },
+      {
+        label: "Live ↗",
+        href: "https://nacos-landingpage-985h-git-submis-bee898-samuel12-dots-projects.vercel.app/",
+      },
+      {
+        label: "GitHub ↗",
+        href: "https://github.com/samuel12-dot/nacos-landingpage/tree/submission/landing-page",
+      },
     ],
   },
   {
